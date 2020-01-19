@@ -114,6 +114,7 @@ def game_hash()
   }
 }
 end
+<<<<<<< HEAD
 
 def num_points_scored(player_name)
 
@@ -136,11 +137,23 @@ def shoe_size(player_name)
         if index[:player_name] == player_name
           return index[:shoe]
         end
+=======
+
+def num_points_scored(player_name)
+  
+#  puts game_hash[:away][:players][0 or 1][:points]
+  
+  game_hash.each do |home_or_away, everything_else|
+    everything_else[:players].each do |player|
+      if [player][:player_name] == player_name
+        return [index][:points]
+>>>>>>> 633097117e8d69f19d93b727120c0c5824e42276
       end
     end
   end
 end
 
+<<<<<<< HEAD
 def team_colors(team_name) 
   
   game_hash.each do |home_or_away, everything_else|
@@ -284,8 +297,58 @@ def long_name_steals_a_ton?
     return false
   end
 
+=======
+def shoe_size(player_name) 
+  
+  
+  
 end
 
+def team_colors(team_name) 
+  
+  
+  
+end
 
+def team_names() 
+  
+  
+  
+>>>>>>> 633097117e8d69f19d93b727120c0c5824e42276
+end
 
+def player_numbers(team_name) 
+  
+  
+  
+end
+
+def player_stats(player_name) 
+  
+  stats = {}
+  
+  game_hash.map do |home_or_away, everything_else|
+    index = 0
+    while index < everything_else[:players].length
+      if everything_else[:players][index][:player_name] == player_name
+        stats[:number] = everything_else[:players][index][:number]
+        stats[:shoe] = everything_else[:players][index][:shoe]
+        stats[:points] = everything_else[:players][index][:points]
+        stats[:rebounds] = everything_else[:players][index][:rebounds]
+        stats[:assists] = everything_else[:players][index][:assists]
+        stats[:steals] = everything_else[:players][index][:steals]
+        stats[:blocks] = everything_else[:players][index][:blocks]
+        stats[:slam_dunks] = everything_else[:players][index][:slam_dunks]
+        return stats
+      end
+      index += 1
+    end
+  end
+end
+
+def big_shoe_rebounds() 
+  
+  
+  
+end
 
